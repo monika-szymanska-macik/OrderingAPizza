@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using OrderiingAPizza.DataAccess;
 using OrderiingAPizza.DataAccess.Entities;
+using OrderingAPizza.ApplicationServices.API.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +14,26 @@ namespace OrderingAPizza.Controllers
     [Route("[controller]")]
     public class PizzaTypeController : ControllerBase
     {
-        private readonly IRepository<PizzaType> pizzaTypeRepository;
+        private readonly IMediator mediator;
 
-        public PizzaTypeController(IRepository<PizzaType> pizzaTypeRepository)
+        public PizzaTypeController(IMediator mediator)
         {
-            this.pizzaTypeRepository = pizzaTypeRepository;
+            this.mediator = mediator;
         }
 
         [HttpGet]
         [Route("")]
-        public IEnumerable<PizzaType> GetAllPizzas() => this.pizzaTypeRepository.GetAll();
+        public async Task<IActionResult> GetAllPizzaTypess([FromQuery] GetPizzaTypeRequest request)
+        {
+            {
+                var response = await this.mediator.Send(request);
+                return this.Ok(response);
+            }
+        }
+        
 
-        [HttpGet]
-        [Route("{pizzaTypeId}")]
-        public PizzaType GetPizzaTypeById(int pizzaTypeId) => this.pizzaTypeRepository.GetById(pizzaTypeId);
+        //[HttpGet]
+        //[Route("{pizzaTypeId}")]
+        //public PizzaType GetPizzaTypeById(int pizzaTypeId) => this.pizzaTypeRepository.GetById(pizzaTypeId);
     }
 }
