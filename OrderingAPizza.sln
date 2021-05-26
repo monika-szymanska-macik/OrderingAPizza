@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderingAPizza", "OrderingAPizza.csproj", "{544E5036-BB61-4554-BA6D-13E002F36240}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderingAPizza", "OrderingAPizza.csproj", "{544E5036-BB61-4554-BA6D-13E002F36240}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderiingAPizza.DataAccess", "..\OrderiingAPizza.DataAccess\OrderiingAPizza.DataAccess.csproj", "{D548A885-0ED0-4186-8874-14C0DFAD02A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderingAPizza.ApplicationServices", "..\OrderingAPizza.ApplicationServices\OrderingAPizza.ApplicationServices.csproj", "{22911D71-44BA-4BF8-BB73-3CC5C0CB30F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{544E5036-BB61-4554-BA6D-13E002F36240}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{544E5036-BB61-4554-BA6D-13E002F36240}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{544E5036-BB61-4554-BA6D-13E002F36240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D548A885-0ED0-4186-8874-14C0DFAD02A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D548A885-0ED0-4186-8874-14C0DFAD02A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D548A885-0ED0-4186-8874-14C0DFAD02A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D548A885-0ED0-4186-8874-14C0DFAD02A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22911D71-44BA-4BF8-BB73-3CC5C0CB30F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22911D71-44BA-4BF8-BB73-3CC5C0CB30F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22911D71-44BA-4BF8-BB73-3CC5C0CB30F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22911D71-44BA-4BF8-BB73-3CC5C0CB30F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
