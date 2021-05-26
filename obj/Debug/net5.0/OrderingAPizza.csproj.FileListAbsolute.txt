@@ -65,3 +65,5 @@ C:\Users\monik\Documents\GitHub\Pizza\OrderingAPizza\bin\Debug\net5.0\MediatR.dl
 C:\Users\monik\Documents\GitHub\Pizza\OrderingAPizza\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\monik\Documents\GitHub\Pizza\OrderingAPizza\bin\Debug\net5.0\OrderingAPizza.ApplicationServices.dll
 C:\Users\monik\Documents\GitHub\Pizza\OrderingAPizza\bin\Debug\net5.0\OrderingAPizza.ApplicationServices.pdb
+C:\Users\monik\Documents\GitHub\Pizza\OrderingAPizza\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\monik\Documents\GitHub\Pizza\OrderingAPizza\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
