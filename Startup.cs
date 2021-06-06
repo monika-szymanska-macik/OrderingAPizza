@@ -9,13 +9,18 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using OrderiingAPizza.DataAccess;
+using OrderingAPizza.DataAccess;
+using OrderingAPizza.DataAccess.CQRS;
 using OrderingAPizza.ApplicationServices.API.Domain;
 using OrderingAPizza.ApplicationServices.Mappings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
+using OrderingAPizza.ApplicationServices.API.Validators;
+using Microsoft.AspNetCore.Authentication;
+using OrderingAPizza.Authentication;
 
 namespace OrderingAPizza
 {
@@ -31,7 +36,19 @@ namespace OrderingAPizza
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
+            services.AddMvcCore()
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AddPizzaTypeRequestValidator>());
+
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
             services.AddTransient<IQueryExecutor, QueryExecutor>();
+            services.AddTransient<ICommandExecutor, CommandExecutor>();
 
             services.AddAutoMapper(typeof(PizzasProfile).Assembly);
 
@@ -63,6 +80,8 @@ namespace OrderingAPizza
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

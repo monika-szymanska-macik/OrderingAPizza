@@ -1,0 +1,4 @@
+2021-05-30 14:12:40.4527|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2021-05-30 14:12:40.6403|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2021-05-30 14:12:40.6703|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\monik\Documents\GitHub\Pizza\OrderingAPizza 
+2021-05-30 14:14:01.1873|0|INFO|OrderingAPizza.Controllers.PizzasController|We are in pizzas 
